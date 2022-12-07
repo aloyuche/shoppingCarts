@@ -60,17 +60,14 @@ const Product = () => {
           <h1 className="display-5">{product.title}</h1>
           <p className="lead">Rating{product.rating && product.rating.rate}</p>
           <i className="fa fa-star"></i>
-          <h3 className="display-6 fw-bolder my-4">${product.price}</h3>
+          <h3 className="display-6 fw-bolder my-5">${product.price}</h3>
           <p className="lead">{product.description}</p>
           <button
-            className="btn btn-outline-dark px-4 py-2"
+            className="btn btn-outline-dark px-4 py-4 w-100"
             onClick={() => addProduct(product)}
           >
             Add To Cart
           </button>
-          <NavLink to={"/cart"} className="btn btn-dark ms-2 px-3">
-            Go To Cart
-          </NavLink>
         </div>
       </>
     );

@@ -9,9 +9,14 @@ const Register = () => {
     email: "",
     password: "",
   });
+
+  // const [user, setUser] = useState('')
+
+  const [success, setSuccess] = useState(false);
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    alert("Form");
+    setSuccess(true);
   };
 
   const handleChange = (event) => {
@@ -20,41 +25,50 @@ const Register = () => {
 
   return (
     <>
-      <FormContainer>
-        <form onSubmit={(e) => handleSubmit(e)}>
-          <div className="brand">
-            <h1>CheloyTec</h1>
-          </div>
-          <input
-            type="text"
-            placeholder="Full Name:"
-            name="fname"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="text"
-            placeholder="User Name:"
-            name="username"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="email"
-            placeholder="Email:"
-            name="email"
-            onChange={(e) => handleChange(e)}
-          />
-          <input
-            type="password"
-            placeholder="Password:"
-            name="password"
-            onChange={(e) => handleChange(e)}
-          />
-          <button className="btn btn-success">Register</button>
+      {success ? (
+        <section>
+          <h1>Successfully Registered</h1> <br />
           <p>
-            Already have an account please <a href="/login">Log In</a>
+            <a href="/login">Login</a>
           </p>
-        </form>
-      </FormContainer>
+        </section>
+      ) : (
+        <FormContainer>
+          <form onSubmit={(e) => handleSubmit(e)}>
+            <div className="brand">
+              <h1>CheloyTec</h1>
+            </div>
+            <input
+              type="text"
+              placeholder="Full Name:"
+              name="fname"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="text"
+              placeholder="User Name:"
+              name="username"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="email"
+              placeholder="Email:"
+              name="email"
+              onChange={(e) => handleChange(e)}
+            />
+            <input
+              type="password"
+              placeholder="Password:"
+              name="password"
+              onChange={(e) => handleChange(e)}
+            />
+            <button className="btn btn-success">Register</button>
+            <p>
+              Already have an account please <a href="/login">Log In</a>
+            </p>
+          </form>
+        </FormContainer>
+      )}
     </>
   );
 };

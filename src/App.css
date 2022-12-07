@@ -23,6 +23,15 @@ body {
   width: 100%;
 }
 
+.card {
+  height: 500px;
+  background-color: #001217;
+}
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}
+
 /* li {
   display: inline;
   padding: 10px;
@@ -94,6 +103,9 @@ a {
 
 .mobile-menu {
   display: none;
+}
+.product img {
+  transition: all 0.5s ease;
 }
 
 @media screen and (max-width: 760px) {

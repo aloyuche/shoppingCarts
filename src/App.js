@@ -8,6 +8,8 @@ import About from "./pages/About";
 import Products from "./shop/Products";
 import Product from "./shop/Product";
 import Navbar from "./navigation/Navbar";
+import Contacts from "./pages/Contacts";
+import Signin from "./pages/Signin";
 
 function App() {
   return (
@@ -15,7 +17,8 @@ function App() {
       <Navbar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/" element={<About />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contacts />} />
         <Route path="/products" element={<Products />} />
         <Route path="/products/:id" element={<Product />} />
         <Route path="/register" element={<Register />} />

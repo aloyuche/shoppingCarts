@@ -8,12 +8,11 @@ const Navbar = () => {
   const state = useSelector((state) => state.handleCart);
   return (
     <div className="navbar">
-      <h2 className="logo">CHELOYTEC</h2>
       <ul
         className={isMobile ? "link-nav-mobile" : "link-nav"}
         onClick={() => setIsMobile(false)}
       >
-        <Link to={"/"} className="links">
+        <Link to={"/"} className="links ml-4">
           <li>Home</li>
         </Link>
         <Link to={"/products"} className="links">
@@ -22,19 +21,24 @@ const Navbar = () => {
         <Link to={"/about"} className="links">
           <li>About</li>
         </Link>
-        <Link to={"/contatact"} className="links">
+        <Link to={"/contact"} className="links">
           <li>Contacts</li>
         </Link>
       </ul>
+      <div className="px-3">
+        <h2 className="logo">CHELOYTEC</h2>
+      </div>
+
       <div className="button">
-        <Link
-          to={"/login"}
-          className="
-       signup btn btn-outline-light ms-2"
-        >
-          <li>
-            <i className="fa fa-sign-in me-1"></i>Login
-          </li>
+        <Link to={"/login"}>
+          <button
+            type="button"
+            className="btn btn-outline-primary mx-3 my-3"
+            data-bs-toggle="modal"
+            data-bs-target="#staticBackdrop"
+          >
+            <i className="fa fa-sign-in me-2"></i> Log In
+          </button>
         </Link>
         <Link
           to={"/register"}
